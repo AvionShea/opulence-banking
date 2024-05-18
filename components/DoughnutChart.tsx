@@ -10,8 +10,8 @@ const DoughnutChart = ({accounts}: DoughnutChartProps) => {
         datasets: [
             {
                 label: "Account",
-                data: [2387.62, 13784, 119814.61],
-                backgroundColor: ["#0747b6", "#2265d8", "#2f91f8"]
+                data: [9548.84, 5622.78, 119814.61],
+                backgroundColor: ["#9FFFCB", "#25A18E", "#004E64"]
             }
         ],
         labels: ["Checking", "Global", "Savings"]
