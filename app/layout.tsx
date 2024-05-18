@@ -14,8 +14,8 @@ const ibmPlexSerif = IBM_Plex_Serif({
 });
 
 export const metadata: Metadata = {
-  title: "Lotus Banking",
-  description: "Lotus Banking is a modern banking platform for everyone.",
+  title: "Lotus Bank",
+  description: "Lotus Bank is a modern banking platform for everyone.",
   icons: {
     icon: "/icons/logo.svg"
   }
