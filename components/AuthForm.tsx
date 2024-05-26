@@ -40,7 +40,7 @@ const AuthForm = ({ type }: { type: string }) => {
     // 2. Define a submit handler.
     function onSubmit(values: z.infer<typeof formSchema>) {
         // Do something with the form values.
-        // ✅ This will be type-safe and validated.
+        // This will be type-safe and validated.
         console.log(values)
     }
 
@@ -93,7 +93,7 @@ const AuthForm = ({ type }: { type: string }) => {
 
                             <CustomInput control={form.control} name='password' label="Password" placeholder='Enter your password' />
 
-                            <Button type="submit">Submit</Button>
+                            <Button type="submit" className='form-btn'>Submit</Button>
                         </form>
                     </Form>
                 </>

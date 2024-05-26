@@ -68,10 +68,13 @@ const config = {
           700: "#344054",
           900: "#101828",
         },
+        purple: {
+          500: "#8e6ed1"
+        }
       },
       backgroundImage: {
-        "bank-gradient": "linear-gradient(90deg, #0179FE 0%, #4893FF 100%)",
-        "gradient-mesh": "linear-gradient(36deg, rgba(42,232,166,1) 0%, rgba(36,238,134,1) 25%, rgba(34,213,187,1) 50%, rgba(32,157,212,1) 75%, rgba(29,48,253,1) 100%);",
+        "bank-gradient": "linear-gradient(307deg, rgba(238,174,202,1) 0%, rgba(193,181,218,1) 50%, rgba(148,187,233,1) 100%)",
+        "gradient-mesh": "linear-gradient(148deg, rgba(238,174,202,1) 0%, rgba(193,181,218,1) 50%, rgba(148,187,233,1) 100%);",
         "bank-green-gradient":
           "linear-gradient(90deg, #01797A 0%, #489399 100%)",
       },
