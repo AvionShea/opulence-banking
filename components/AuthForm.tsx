@@ -22,9 +22,13 @@ import { Input } from "@/components/ui/input"
 import CustomInput from './CustomInput';
 import { authFormSchema } from '@/lib/utils';
 import { Loader2 } from 'lucide-react';
+import SignUp from '@/app/(auth)/sign-up/page';
+import { useRouter } from 'next/navigation';
+import { signIn, signUp } from '@/lib/actions/user.actions';
 
 
 const AuthForm = ({ type }: { type: string }) => {
+    const router = useRouter();
     const [user, setUser] = useState(null);
     const [isLoading, setIsLoading] = useState(false);
 
@@ -40,12 +44,44 @@ const AuthForm = ({ type }: { type: string }) => {
     })
 
     // 2. Define a submit handler.
-    function onSubmit(values: z.infer<typeof formSchema>) {
-        // Do something with the form values.
-        // This will be type-safe and validated.
+    const onSubmit = async (data: z.infer<typeof formSchema>) => {
         setIsLoading(true);
-        console.log(values)
-        setIsLoading(false);
+
+        try {
+            //sign up with Appwrite & create Plaid link token
+            if (type === "sign-up") {
+                const userData = {
+                    firstName: data.firstName,
+                    lastName: data.lastName,
+                    address1: data.address1,
+                    city: data.city,
+                    state: data.state,
+                    zipCode: data.zipCode,
+                    ssn: data.ssn,
+                    dob: data.dob,
+                    email: data.email,
+                    password: data.password
+                }
+
+                const newUser = await signUp(userData);
+
+                setUser(newUser);
+
+            }
+
+            if (type === "sign-in") {
+                const response = await signIn({
+                    email: data.email,
+                    password: data.password
+                })
+
+                if (response) router.push("/");
+            }
+        } catch (error) {
+            console.log(error);
+        } finally {
+            setIsLoading(false);
+        }
     }
 
     return (
@@ -101,6 +137,7 @@ const AuthForm = ({ type }: { type: string }) => {
                                     </div>
 
                                     <CustomInput control={form.control} name='address1' label='Address' placeholder='Enter your mailing address' />
+                                    <CustomInput control={form.control} name='city' label='City' placeholder='Enter your city' />
 
                                     <div className='flex gap-4'>
                                         <CustomInput control={form.control} name='state' label='State' placeholder='ex: NC' />
@@ -108,8 +145,8 @@ const AuthForm = ({ type }: { type: string }) => {
                                     </div>
 
                                     <div className='flex gap-4'>
-                                        <CustomInput control={form.control} name='ssn' label='SSN' placeholder='ex:1234' />
                                         <CustomInput control={form.control} name='dob' label='Date of Birth' placeholder='MM-DD-YYYY' />
+                                        <CustomInput control={form.control} name='ssn' label='SSN' placeholder='ex: 1234' />
                                     </div>
                                 </>
                             )}
