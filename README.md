@@ -10,7 +10,7 @@
 
 ## <a name="introduction">Introduction</a>
 
-Built with Next.js, Lotus Banking is a financial SaaS platform that connects to multiple bank accounts, displays transactions in real-time, allows users to transfer money to other platform users, and manages their finances altogether.
+Built with Next.js, Opulence Banking is a financial SaaS platform that connects to multiple bank accounts, displays transactions in real-time, allows users to transfer money to other platform users, and manages their finances altogether.
 
 ## <a name="tech-stack">Tech Stack</a>
 
@@ -60,8 +60,8 @@ Make sure you have the following installed on your machine:
 **Cloning the Repository**
 
 ```bash
-git clone https://github.com/AvionShea/lotus-banking.git
-cd lotus-banking
+git clone https://github.com/AvionShea/pulence-banking.git
+cd opulence-banking
 ```
 
 **Installation**
