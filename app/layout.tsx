@@ -15,7 +15,7 @@ const ibmPlexSerif = IBM_Plex_Serif({
 
 export const metadata: Metadata = {
   title: "Opulence Bank",
-  description: "Opulence Bank is a modern banking platform for everyone.",
+  description: "Opulence Bank is a modern banking platform for women by women.",
   icons: {
     icon: "/icons/logo.svg"
   }

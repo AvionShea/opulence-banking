@@ -40,7 +40,7 @@ const MobileNavbar = ({ user }: MobileNavProps) => {
                             height={34}
                             alt='Opulence Bank logo'
                         />
-                        <h1 className='text-26 font-ibm-plex-serif font-bold text-black-1'>
+                        <h1 className='text-26 font-ibm-plex-serif font-bold text-purple-500'>
                             Opulence Bank
                         </h1>
                     </Link>
