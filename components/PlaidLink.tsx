@@ -5,7 +5,7 @@ import { useRouter } from 'next/navigation'
 import { createLinkToken, exchangePublicToken } from '@/lib/actions/user.actions'
 
 const PlaidLink = ({ user, variant }: PlaidLinkProps) => {
-    const router = useRouter
+    const router = useRouter();
 
     const [token, setToken] = useState("");
 
@@ -25,7 +25,7 @@ const PlaidLink = ({ user, variant }: PlaidLinkProps) => {
             user,
         })
 
-        router.push("/");
+        router.push('/');
 
     }, [user])
 
