@@ -137,7 +137,7 @@ export async function getLoggedInUser() {
     }
   }
 
-  export const createBankAccount = async ({userId, bankId, accountId, accessToken, fundingSourceUrl, sharableId}: createBankAccountProps) => {
+  export const createBankAccount = async ({userId, bankId, accountId, accessToken, fundingSourceUrl, shareableId}: createBankAccountProps) => {
     try {
         const {database} = await createAdminClient();
 
@@ -151,7 +151,7 @@ export async function getLoggedInUser() {
                 accountId, 
                 accessToken, 
                 fundingSourceUrl, 
-                sharableId
+                shareableId
             }
         );
 
@@ -208,7 +208,7 @@ export async function getLoggedInUser() {
             accountId: accountData.account_id,
             accessToken,
             fundingSourceUrl,
-            sharableId: encryptId(accountData.account_id)
+            shareableId: encryptId(accountData.account_id)
         });
 
         //revalidate path to reflect changes
