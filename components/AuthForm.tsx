@@ -52,14 +52,14 @@ const AuthForm = ({ type }: { type: string }) => {
             //sign up with Appwrite & create Plaid link token
             if (type === "sign-up") {
                 const userData = {
-                    firstName: data.firstName,
-                    lastName: data.lastName,
-                    address1: data.address1,
-                    city: data.city,
-                    state: data.state,
-                    zipCode: data.zipCode,
-                    ssn: data.ssn,
-                    dob: data.dob,
+                    firstName: data.firstName!,
+                    lastName: data.lastName!,
+                    address1: data.address1!,
+                    city: data.city!,
+                    state: data.state!,
+                    zipCode: data.zipCode!,
+                    ssn: data.ssn!,
+                    dob: data.dob!,
                     email: data.email,
                     password: data.password
                 }
