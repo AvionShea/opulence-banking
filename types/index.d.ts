@@ -13,8 +13,8 @@ declare type SignUpParams = {
   address1: string;
   city: string;
   state: string;
-  postalCode: string;
-  dateOfBirth: string;
+  zipCode: string;
+  dob: string;
   ssn: string;
   email: string;
   password: string;
@@ -37,8 +37,8 @@ declare type User = {
   address1: string;
   city: string;
   state: string;
-  postalCode: string;
-  dateOfBirth: string;
+  zipCode: string;
+  dob: string;
   ssn: string;
 };
 
@@ -132,8 +132,8 @@ declare type NewDwollaCustomerParams = {
   address1: string;
   city: string;
   state: string;
-  postalCode: string;
-  dateOfBirth: string;
+  zipCode: string;
+  dob: string;
   ssn: string;
 };
 

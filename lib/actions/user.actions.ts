@@ -35,9 +35,9 @@ export const signIn = async ({email, password}: signInProps) => {
     }
 }
 
-export const signUp = async (userData: SignUpParams) => {
+export const signUp = async ({password, ...userData}: SignUpParams) => {
     
-    const {email, password, firstName, lastName} = userData;
+    const {email, firstName, lastName} = userData;
 
     let newUserAccount;
     
@@ -122,7 +122,7 @@ export async function getLoggedInUser() {
             user: {
                 client_user_id: user.$id
             },
-            client_name: user.name,
+            client_name: `${user.firstName} ${user.lastName}`,
             products: ["auth"] as Products[],
             language: "en",
             country_codes: ["US"] as CountryCode[],
@@ -203,7 +203,7 @@ export async function getLoggedInUser() {
 
         //if funding source exists, create bank acct.
         await createBankAccount({
-            userid: user.$id,
+            userId: user.$id,
             bankId: itemID,
             accountId: accountData.account_id,
             accessToken,
