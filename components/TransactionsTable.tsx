@@ -7,44 +7,63 @@ import {
     TableHeader,
     TableRow,
 } from "@/components/ui/table"
-import { formatAmount, getTransactionStatus, removeSpecialCharacters } from "@/lib/utils"
+import { formatAmount, formatDateTime, getTransactionStatus, removeSpecialCharacters } from "@/lib/utils"
 
 
 const TransactionsTable = ({ transactions }: TransactionTableProps) => {
     return (
         <Table>
-            <TableHeader className="bg-[#f2ebff]" >
+            <TableHeader className="bg-[#f2ebff]">
                 <TableRow>
                     <TableHead className="px-2">Transaction</TableHead>
                     <TableHead className="px-2">Amount</TableHead>
                     <TableHead className="px-2">Status</TableHead>
                     <TableHead className="px-2">Date</TableHead>
-                    <TableHead className="px-2 max-md: hidden">Channel</TableHead>
-                    <TableHead className="px-2 max-md: hidden">Category</TableHead>
+                    <TableHead className="px-2 max-md:hidden">Channel</TableHead>
+                    <TableHead className="px-2 max-md:hidden">Category</TableHead>
                 </TableRow>
             </TableHeader>
             <TableBody>
-                <TableRow>
-                    {transactions.map((t: Transaction) => {
-                        const status = getTransactionStatus(new Date(t.date))
-                        const amount = formatAmount(t.amount)
+                {transactions.map((t: Transaction) => {
+                    const status = getTransactionStatus(new Date(t.date))
+                    const amount = formatAmount(t.amount)
 
-                        const isDebit = t.type === "debit";
-                        const isCredit = t.type === "credit";
+                    const isDebit = t.type === "debit";
+                    const isCredit = t.type === "credit";
 
-                        return (
-                            <TableRow key={t.id}>
-                                <TableCell>
-                                    <div>
-                                        <h1>
-                                            {removeSpecialCharacters(t.name)}
-                                        </h1>
-                                    </div>
-                                </TableCell>
-                            </TableRow>
-                        )
-                    })}
-                </TableRow>
+                    return (
+                        <TableRow key={t.id}>
+                            <TableCell>
+                                <div>
+                                    <h1>
+                                        {removeSpecialCharacters(t.name)}
+                                    </h1>
+                                </div>
+                            </TableCell>
+
+                            <TableCell>
+                                {isDebit ? `-${amount}` : isCredit ? amount : amount}
+                            </TableCell>
+
+                            <TableCell>
+                                {status}
+                            </TableCell>
+
+                            <TableCell>
+                                {formatDateTime(new Date(t.date)).dateTime}
+                            </TableCell>
+
+                            <TableCell>
+                                {t.paymentChannel}
+                            </TableCell>
+
+                            <TableCell>
+                                {t.category}
+                            </TableCell>
+
+                        </TableRow>
+                    )
+                })}
             </TableBody>
         </Table>
 
