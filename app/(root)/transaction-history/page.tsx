@@ -30,16 +30,16 @@ const TransactionHistory = async ({ searchParams: { id, page } }: SearchParamPro
         <div className='transactions-account'>
           <div className='flex flex-col gap-2'>
 
-            <h2 className='text-18 font-bold text-black'>{account?.data.name}</h2>
+            <h2 className='text-18 font-bold text-white'>{account?.data.name}</h2>
 
-            <p className='text-14 text-black-25'>{account?.data.officialName}</p>
+            <p className='text-14 text-blue-25'>{account?.data.officialName}</p>
 
-            <p className='text-14 font-semibold tracking-[1.1px] text-black'>●●●● ●●●● ●●●● {account?.data.mask}</p>
+            <p className='text-14 font-semibold tracking-[1.1px] text-white'>●●●● ●●●● ●●●● {account?.data.mask}</p>
           </div>
 
           <div className='transactions-account-balance'>
-            <p className='text-14 text-black'>Current Balance</p>
-            <p className='text-24 text-center font-bold text-black'>{formatAmount(account?.data.currentBalance)}</p>
+            <p className='text-14 text-white'>Current Balance</p>
+            <p className='text-24 text-center font-bold text-white'>{formatAmount(account?.data.currentBalance)}</p>
           </div>
 
         </div>
