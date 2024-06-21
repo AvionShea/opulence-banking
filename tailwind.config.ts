@@ -39,6 +39,7 @@ const config = {
         pink: {
           25: "#FEF6FB",
           100: "#FCE7F6",
+          200: "#eeaeca",
           500: "#EE46BC",
           600: "#DD2590",
           700: "#C11574",
