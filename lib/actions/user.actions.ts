@@ -143,7 +143,7 @@ export async function getLoggedInUser() {
             user: {
                 client_user_id: user.$id
             },
-            client_name: `${user.firstName} ${user.lastName}`,
+            client_name: "Opulence Bank",
             products: ["auth"] as Products[],
             language: "en",
             country_codes: ["US"] as CountryCode[],
