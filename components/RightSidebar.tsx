@@ -30,8 +30,8 @@ const RightSidebar = ({ user, transactions, banks }: RightSidebarProps) => {
 
             <section className='banks'>
                 <div className='flex w-full justify-between'>
-                    <h2 className='header-2'>My Banks</h2>
-                    <Link href="/" className='flex gap-2'>
+                    <h2 className='header-2'>My Accounts</h2>
+                    {/* <Link href="/" className='flex gap-2'>
                         <Image
                             src="/icons/plus.svg"
                             width={20}
@@ -39,7 +39,7 @@ const RightSidebar = ({ user, transactions, banks }: RightSidebarProps) => {
                             alt='plus'
                         />
                         <h2 className='text-14 font-semibold text-gray-600'>Add Bank</h2>
-                    </Link>
+                    </Link> */}
                 </div>
                 {banks?.length > 0 && (
                     <div className='relative flex flex-1 flex-col items-center justify-center gap-5'>
