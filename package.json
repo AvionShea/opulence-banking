@@ -27,6 +27,7 @@
     "npx": "^10.2.2",
     "plaid": "^24.0.0",
     "query-string": "^9.0.0",
+    "radix-ui": "^1.0.1",
     "react": "^18.3.1",
     "react-chartjs-2": "^5.2.0",
     "react-countup": "^6.5.3",
