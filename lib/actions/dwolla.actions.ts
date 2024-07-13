@@ -3,7 +3,7 @@
 import { Client } from "dwolla-v2";
 
 const getEnvironment = (): "sandbox" | "production" => {
-  const environment = process.env.NEXT_DWOLLA_ENV as string;
+  const environment = process.env.NEXT_PUBLIC_DWOLLA_ENV as string;
 
   switch (environment) {
     case "sandbox":
