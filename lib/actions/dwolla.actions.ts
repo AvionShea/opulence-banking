@@ -2,7 +2,7 @@
 
 import { Client } from "dwolla-v2";
 
-const getEnvironment = (): "production" | "sandbox" => {
+const getEnvironment = (): "sandbox" | "production" => {
   const environment = process.env.DWOLLA_ENV as string;
 
   switch (environment) {
