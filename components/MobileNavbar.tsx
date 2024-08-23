@@ -18,7 +18,7 @@ import Footer from "./Footer";
 
 
 const MobileNavbar = ({ user }: MobileNavProps) => {
-    const pathName = usePathname();
+    const pathname = usePathname();
 
     return (
 
@@ -50,7 +50,7 @@ const MobileNavbar = ({ user }: MobileNavProps) => {
                         <SheetClose asChild>
                             <nav className="flex h-full flex-col gap-6 pt-16 text-white">
                                 {sidebarLinks.map((item) => {
-                                    const isActive = pathName === item.route || pathName.startsWith(`${item.route}/`)
+                                    const isActive = pathname === item.route || pathname.startsWith(`${item.route}/`)
 
                                     return (
                                         <SheetClose asChild key={item.route}>

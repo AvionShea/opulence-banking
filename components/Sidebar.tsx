@@ -9,7 +9,7 @@ import Footer from './Footer';
 import PlaidLink from './PlaidLink';
 
 const Sidebar = ({ user }: SiderbarProps) => {
-    const pathName = usePathname();
+    const pathname = usePathname();
 
     return (
         <section className='sidebar'>
@@ -28,7 +28,7 @@ const Sidebar = ({ user }: SiderbarProps) => {
                 </Link>
 
                 {sidebarLinks.map((item) => {
-                    const isActive = pathName === item.route || pathName.startsWith(`${item.route}/`)
+                    const isActive = pathname === item.route || pathname.startsWith(`${item.route}/`)
 
                     return (
                         <Link href={item.route} key={item.label} className={cn("sidebar-link", { "bg-bank-gradient": isActive })}>
