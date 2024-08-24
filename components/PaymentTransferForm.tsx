@@ -107,7 +107,7 @@ const PaymentTransferForm = ({ accounts }: PaymentTransferFormProps) => {
                                         Select Source Bank
                                     </FormLabel>
                                     <FormDescription className="text-12 font-normal text-gray-600">
-                                        Select the bank account you want to transfer funds from
+                                        Select the bank account you want to transfer funds from.
                                     </FormDescription>
                                 </div>
                                 <div className="flex w-full flex-col">
@@ -133,11 +133,11 @@ const PaymentTransferForm = ({ accounts }: PaymentTransferFormProps) => {
                             <div className="payment-transfer_form-item pb-6 pt-5">
                                 <div className="payment-transfer_form-content">
                                     <FormLabel className="text-14 font-medium text-gray-700">
-                                        Transfer Note (Optional)
+                                        Transfer Note
                                     </FormLabel>
                                     <FormDescription className="text-12 font-normal text-gray-600">
                                         Please provide any additional information or instructions
-                                        related to the transfer
+                                        related to the transfer.
                                     </FormDescription>
                                 </div>
                                 <div className="flex w-full flex-col">
@@ -160,7 +160,7 @@ const PaymentTransferForm = ({ accounts }: PaymentTransferFormProps) => {
                         Bank account details
                     </h2>
                     <p className="text-16 font-normal text-gray-600">
-                        Enter the bank account details of the recipient
+                        Enter the bank account details of the recipient.
                     </p>
                 </div>
 
